@@ -288,6 +288,11 @@ require('lazy').setup({
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
         ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
+        ['<leader>f'] = {
+          name = 'Find',
+          f = { ':Telescope find_files<cr>', 'Telescope find files' },
+          r = { ':Telescope live_grep<cr>', 'Telescope live grep' },
+        },
       }
       -- visual mode
       require('which-key').register({
@@ -630,7 +635,7 @@ require('lazy').setup({
     lazy = false,
     keys = {
       {
-        '<leader>f',
+        '<leader>F',
         function()
           require('conform').format { async = true, lsp_fallback = true }
         end,
